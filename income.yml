@@ -1,0 +1,16 @@
+urls:
+  data: 
+    url: 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
+    name: 'adult.data'
+  names: 
+    url: 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.names'
+    name: 'adult.names'
+  test: 
+    url: 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.test'
+    name: 'adult.test'
+  old_names: 
+    url: 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/old.adult.names'
+    name: 'old.adult.names'
+
+download_dir: '/Users/tanmay/Data/deep_income/income_download'
+proc_dir: '/Users/tanmay/Data/deep_income/income_proc'
