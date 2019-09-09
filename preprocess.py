@@ -119,6 +119,25 @@ def preprocess_train_val():
     print('\tSave labels to npy file ...')
     filename = os.path.join(proc_dir,income_const['train_val_npy']['label'])
     np.save(filename,labels)
+    
+    print('\tCreate train-val split ...')
+    num_train_val_samples = feat.shape[0]
+    num_train_samples = int(
+        income_const['train_val_split']*num_train_val_samples)
+    sample_ids = np.arange(num_train_val_samples)
+    np.random.shuffle(sample_ids)
+    train_ids = sample_ids[:num_train_samples]
+    val_ids = sample_ids[num_train_samples:]
+    print('\t\tNum train samples:',len(train_ids))
+    print('\t\tNum val samples:',len(val_ids))
+
+    print('\tSave train and val sample ids ...')
+    filename = os.path.join(proc_dir,income_const['sample_ids_npy']['train'])
+    np.save(filename,train_ids)
+    filename = os.path.join(proc_dir,income_const['sample_ids_npy']['val'])
+    np.save(filename,val_ids)
+
+
 
 
 def preprocess_test():
@@ -160,6 +179,11 @@ def preprocess_test():
     print('\tSave labels to npy file ...')
     filename = os.path.join(proc_dir,income_const['test_npy']['label'])
     np.save(filename,labels)
+
+    print('\tSave sample ids ...')
+    num_samples = feat.shape[0]
+    filename = os.path.join(proc_dir,income_const['sample_ids_npy']['test'])
+    np.save(filename,np.arange(num_samples))
 
 
 def main():
