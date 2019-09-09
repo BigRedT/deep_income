@@ -21,7 +21,7 @@ CONTINUOUS_ATTRS = {
     'education-num': 'Education-Num',
     'capital-gain': 'Capital-Gain',
     'capital-loss': 'Capital-Loss',
-    'hours-per_week': 'Hours-Per-Week',
+    'hours-per-week': 'Hours-Per-Week',
 }
 
 ATTRS = [
@@ -33,11 +33,13 @@ ATTRS = [
     'White', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo', 'Other', 'Black',
     'Female', 'Male',
     'United-States', 'Cambodia', 'England', 'Puerto-Rico', 'Canada', 'Germany', 'Outlying-US(Guam-USVI-etc)', 'India', 'Japan', 'Greece', 'South', 'China','Cuba', 'Iran', 'Honduras', 'Philippines', 'Italy', 'Poland', 'Jamaica', 'Vietnam', 'Mexico', 'Portugal', 'Ireland', 'France', 'Dominican-Republic', 'Laos', 'Ecuador', 'Taiwan', 'Haiti', 'Columbia', 'Hungary', 'Guatemala', 'Nicaragua', 'Scotland', 'Thailand', 'Yugoslavia', 'El-Salvador', 'Trinadad&Tobago', 'Peru', 'Hong', 'Holand-Netherlands',
-    'Age','Final-Weight','Eduction-Num','Capital-Gain','Capital-Loss','Hours-Per-Week'
+    'Age','Final-Weight','Education-Num','Capital-Gain','Capital-Loss','Hours-Per-Week'
 ]
 
+ATTR_TO_IDX = {k:v for v,k in enumerate(ATTRS)}
+
 LABELS = {
-    '>50K': 1,
-    '<=50K': 0
+    '>50K': 1.0,
+    '<=50K': 0.0
 }
 
