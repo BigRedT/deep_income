@@ -14,3 +14,12 @@ urls:
 
 download_dir: '/Users/tanmay/Data/deep_income/income_download'
 proc_dir: '/Users/tanmay/Data/deep_income/income_proc'
+
+train_val_npy: 
+  feat: 'train_val_feat.npy'
+  label: 'train_val_label.npy'
+  feat_mean: 'train_val_feat_mean.npy'
+  feat_std: 'train_val_feat_std.npy'
+test_npy: 
+  feat: 'test_feat.npy'
+  label: 'test_label.npy'
