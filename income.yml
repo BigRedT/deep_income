@@ -14,7 +14,9 @@ urls:
 
 download_dir: '/Users/tanmay/Data/deep_income/income_download'
 proc_dir: '/Users/tanmay/Data/deep_income/income_proc'
+exp_dir: '/Users/tanmay/Data/deep_income/income_exp'
 
+train_val_split: 0.75
 train_val_npy: 
   feat: 'train_val_feat.npy'
   label: 'train_val_label.npy'
@@ -23,3 +25,7 @@ train_val_npy:
 test_npy: 
   feat: 'test_feat.npy'
   label: 'test_label.npy'
+sample_ids_npy:
+  train: 'train_sample_ids.npy'
+  val: 'val_sample_ids.npy'
+  test: 'test_sample_ids.npy'
