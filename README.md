@@ -1,1 +1,3 @@
-# deep_income
+# Deep Income
+
+This repository was created as part of a guest lecture for [CS598RK: HCI for ML](https://courses.grainger.illinois.edu/cs598rk/fa2019/) offered in Fall 2019 at UIUC. The goal is to familiarize students with Pytorch and different components of Deep Learning through a Not-So-Big-Data ML problem -- learning to predict annual income using [UCI Census Income Dataset](https://archive.ics.uci.edu/ml/datasets/Adult) (a.k.a UCI Adult Dataset). 
