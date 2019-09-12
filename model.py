@@ -8,8 +8,26 @@ class IncomeClassifier(nn.Module):
         self.in_dim = in_dim
         self.hidden_dim = hidden_dim
         self.out_dim = 2 
+        # self.layers = nn.Sequential(
+        #     nn.Linear(self.in_dim,self.out_dim),
+        # )
         self.layers = nn.Sequential(
-            nn.Linear(self.in_dim,self.out_dim),
+            nn.Linear(self.in_dim,self.hidden_dim),
+            nn.BatchNorm1d(self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim,self.hidden_dim),
+            nn.BatchNorm1d(self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim,self.hidden_dim),
+            nn.BatchNorm1d(self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim,self.hidden_dim),
+            nn.BatchNorm1d(self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim,self.hidden_dim),
+            nn.BatchNorm1d(self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim,self.out_dim)
         )
         self.softmax_layer = nn.Softmax(1)
 
