@@ -16,7 +16,7 @@ download_dir: '/Users/tanmay/Data/deep_income/income_download'
 proc_dir: '/Users/tanmay/Data/deep_income/income_proc'
 exp_dir: '/Users/tanmay/Data/deep_income/income_exp'
 
-train_val_split: 0.75
+train_val_split: 0.8
 train_val_npy: 
   feat: 'train_val_feat.npy'
   label: 'train_val_label.npy'
