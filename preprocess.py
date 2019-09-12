@@ -138,9 +138,9 @@ def preprocess_train_val():
     np.save(filename,val_ids)
 
 
-
-
 def preprocess_test():
+    np.random.seed(0)
+    
     print('Preprocess test data ...')
     filepath = os.path.join(
         income_const['download_dir'],
