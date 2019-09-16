@@ -85,6 +85,7 @@ python -m test --exp_name <experiment name> --num_hidden_blocks <number of hidde
 ```
 
 For default arguments the accuracies on various data subsets should be in the ballpark of the following
+
 |Train|Val|Test|
 |---|---|---|
 |86.46|84.97|84.42|
