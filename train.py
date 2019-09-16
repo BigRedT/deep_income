@@ -187,7 +187,7 @@ def validation(model,dataloader,exp_const,epoch,it,step,subset):
     '--loss',
     default='cross_entropy',
     show_default=True,
-    type=str,
+    type=click.Choice(['cross_entropy','focal']),
     help='Loss used for training')
 @click.option(
     '--num_hidden_blocks',
@@ -205,7 +205,7 @@ def main(**kwargs):
     exp_const.num_epochs = 50
     exp_const.batch_size = 256
     exp_const.num_workers = 2
-    exp_const.gamma = 2
+    exp_const.gamma = 0.5
     exp_const.loss = kwargs['loss']
     exp_const.seed = 0
 
