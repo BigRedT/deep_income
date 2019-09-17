@@ -88,7 +88,7 @@ For default arguments the accuracies on various data subsets should be in the ba
 
 |Train|Val|Test|
 |---|---|---|
-|86.46|84.97|84.42|
+|86.17|85.05|84.65|
 
 **A note on reproducibility:** Reproducing the above numbers is possible only if all of the following are true:
 - random seeds in the `preprocess.py` and `train.py` scripts are set to `0`
