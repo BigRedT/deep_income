@@ -63,6 +63,7 @@ class IncomeClassifier(nn.Module):
 
 def test_classifier():
     const = IncomeClassifierConstants()
+    const.hidden_dim = 50
     model = IncomeClassifier(const)
     x = torch.rand([5,105])
     logits, probs = model(x)
