@@ -97,6 +97,7 @@ def preprocess_train_val():
     
     print('\tConvert samples to feature vectors ...')
     feat = convert_data_to_feature_vectors(data)
+    print('\t\tNormalize features ...')
     feat, feat_mean, feat_std = normalize(feat)
     print('\t\tFeature matrix dims:',feat.shape)
     
@@ -139,8 +140,6 @@ def preprocess_train_val():
 
 
 def preprocess_test():
-    np.random.seed(0)
-    
     print('Preprocess test data ...')
     filepath = os.path.join(
         income_const['download_dir'],
@@ -157,6 +156,7 @@ def preprocess_test():
     print('\tConvert samples to feature vectors ...')
     feat = convert_data_to_feature_vectors(data)
     proc_dir = income_const['proc_dir']
+    print('\t\tNormalize features ...')
     filename = os.path.join(proc_dir,income_const['train_val_npy']['feat_mean'])
     feat_mean = np.load(filename)
     filename = os.path.join(proc_dir,income_const['train_val_npy']['feat_std'])
@@ -187,6 +187,7 @@ def preprocess_test():
 
 
 def main():
+    np.random.seed(0)
     utils.mkdir_if_not_exist(income_const['proc_dir'])
     preprocess_train_val()
     preprocess_test()
