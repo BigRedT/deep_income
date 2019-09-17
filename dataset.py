@@ -1,4 +1,5 @@
 import os
+import click
 import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
@@ -55,13 +56,26 @@ def test_dataloader():
     dataloader = DataLoader(
         dataset,
         batch_size=5,
-        num_workers=5,
+        num_workers=2,
         shuffle=True,
         drop_last=False)
     for data in dataloader:
         import pdb; pdb.set_trace()
 
 
+@click.command()
+@click.option(
+    '--test',
+    type=click.Choice(['dataset','dataloader']),
+    help='Which test to run')
+def test_main(test):
+    if test=='dataset':
+        test_dataset()
+    elif test=='dataloader':
+        test_dataloader()
+    else:
+        assert(False),'test not implemented'
+
+
 if __name__=='__main__':
-    #test_dataset()
-    test_dataloader()
+    test_main()
